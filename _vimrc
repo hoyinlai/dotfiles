@@ -8,11 +8,11 @@ set nocompatible " Be iMproved
 
 if has('vim_starting')
   " Required:
-  set runtimepath+=/Users/hoyinlai/.vim/bundle/neobundle.vim/
+  set runtimepath+=${HOME}/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('/Users/hoyinlai/.vim/bundle'))
+call neobundle#begin(expand('${HOME}/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -74,7 +74,7 @@ set history=1000 " lines of history to remember
 set clipboard+=unnamed " sharing with windows clipboard
 set fileformats=unix,mac,dos " the order of file format support
 set viminfo+=! " make sure it can save viminfo
-set iskeyword+=_,$,@,%,# " none of these characters should be word dividers, so ensure that they are not
+set iskeyword+=_,$$,@,%,# " none of these characters should be word dividers, so ensure that they are not
 set nostartofline " leave my cursor where it was
 set nomodeline " do not have files trying to overwrite .vimrc
 set nobackup " do not make backup file
