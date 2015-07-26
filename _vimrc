@@ -18,29 +18,37 @@ call neobundle#begin(expand('${HOME}/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/neosnippet.vim'
+" General plugins
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'fs111/pydoc.vim'
-NeoBundle 'garbas/vim-snipmate'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'klen/rope-vim'
-NeoBundle 'nvie/vim-flake8'
-NeoBundle 'pgilad/neobundle-packages'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'vim-jp/vital.vim'
-NeoBundle 'vim-scripts/TaskList.vim'
-NeoBundle 'vim-scripts/grep.vim'
-NeoBundle 'vim-scripts/scratch.vim'
 NeoBundle 'vim-scripts/Zenburn'
-NeoBundle 'wincent/Command-T'
+NeoBundle 'vim-scripts/scratch.vim'
+
+" JavaScript plugins
+NeoBundle 'pangloss/vim-javascript'
+
+" Python plugins
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'klen/python-mode'
+
+"NeoBundle 'MarcWeber/vim-addon-mw-utils'
+"NeoBundle 'Shougo/neosnippet-snippets'
+"NeoBundle 'Shougo/neosnippet.vim'
+"NeoBundle 'burnettk/vim-angular'
+"NeoBundle 'flazz/vim-colorschemes'
+"NeoBundle 'fs111/pydoc.vim'
+"NeoBundle 'garbas/vim-snipmate'
+"NeoBundle 'kien/ctrlp.vim'
+"NeoBundle 'pgilad/neobundle-packages'
+"NeoBundle 'sjl/gundo.vim'
+"NeoBundle 'tomtom/tlib_vim'
+"NeoBundle 'vim-jp/vital.vim'
+"NeoBundle 'vim-scripts/TabBar'
+"NeoBundle 'vim-scripts/TaskList.vim'
+"NeoBundle 'vim-scripts/grep.vim'
+"NeoBundle 'wincent/Command-T'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', {'rev': '3787e5'}
@@ -64,6 +72,10 @@ NeoBundleCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End NeoBundle Script
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Plugins configuration
+let NERDTreeIgnore = ['\.pyc$']
+let g:pymode_rope = 0
 
 " Global
 syntax on
@@ -133,7 +145,7 @@ map <c-h> <c-w>h
 
 " GUI Settings
 if has('gui')
-    set guioptions=acg " advanced, try help 'go
+    set guioptions=acgT " advanced, try help 'go
     set nomousehide " don't hide the mouse
     set cursorline " highlight current line
     set lines=60 " perfect size for me

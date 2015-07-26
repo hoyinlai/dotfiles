@@ -26,6 +26,7 @@ def main(args=sys.argv[1:]):
         with open(os.path.join(home_dir, f.replace('_', '.')), 'wb') as out_file, \
                 open(f) as in_file:
             template = string.Template(in_file.read())
+            print 'Writing file: "%s"' % out_file.name
             out_file.write(template.substitute({'HOME': home_dir}))
 
 
